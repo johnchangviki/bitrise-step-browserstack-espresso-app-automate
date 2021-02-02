@@ -190,6 +190,16 @@ inputs:
       summary: Set the callback url where we can send a confirmation once your test execution is completed
       is_expand: false
       is_required: false
+  - enable_spoon_framework: "true"
+    opts:
+      title: enableSpoonFramework
+      category: enable screenshot Options
+      summary: Set this parameter if you want to enable local testing.
+      description: To enable screenshots, you need to pass the enableSpoonFramework parameter in the REST API request to start Espresso test execution. By default its set to true
+      is_required: false
+      value_options:
+        - "true"
+        - "false"
 outputs:
   - BUILD_ID:
     opts:
