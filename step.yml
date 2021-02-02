@@ -201,7 +201,7 @@ inputs:
         - "true"
         - "false"
 outputs:
-  - BUILD_ID:
+  - BROWSERSTACK_BUILD_ID:
     opts:
       title: Build ID
       summary: The Build ID for this test run in BrowserStack
