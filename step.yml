@@ -188,7 +188,7 @@ inputs:
       title: Callback Url
       category: Automated Test Options
       summary: Set the callback url where we can send a confirmation once your test execution is completed
-      is_expand: false
+      is_expand: true
       is_required: false
   - enable_spoon_framework: "true"
     opts:
