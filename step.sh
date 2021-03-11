@@ -28,7 +28,7 @@ json=$( jq -n \
                 --arg language "$browserstack_language" \
                 --arg locale "$browserstack_locale" \
                 --arg callback "$callback_url?hash_code=$commitHash" \
-                '{devices: $devices, app: $app_url, testSuite: $test_url, package: $package, class: $class, annotation: $annotation, size: $size, logs: $logs, enableSpoonFramework: $screenshot, video: $video, local: $loc, localIdentifier: $locId, gpsLocation: $gpsLocation, language: $language, locale: $locale, deviceLogs: true, networkLogs: true, callbackURL: $callback}')
+                '{devices: $devices, app: $app_url, testSuite: $test_url, package: $package, class: $class, annotation: $annotation, size: $size, logs: $logs, enableSpoonFramework: $screenshot, video: $video, local: $loc, localIdentifier: $locId, gpsLocation: $gpsLocation, language: $language, locale: $locale, deviceLogs: true, networkLogs: true, singleRunnerInvocation: true, callbackURL: $callback}')
 run_test_response="$(curl -X POST https://api-cloud.browserstack.com/app-automate/espresso/build -d \ "$json" -H "Content-Type: application/json" -u "$browserstack_username:$browserstack_access_key")"
 build_id=$(echo "$run_test_response" | jq .build_id | sed 's/"//g')
 envman add --key BROWSERSTACK_BUILD_ID --value "$build_id"
